@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class BookingManager {
     private final ArrayList<Booking> bookings;
@@ -7,7 +8,7 @@ public class BookingManager {
         bookings = new ArrayList<>();
     }
 
-    public void addBooking(String type, int numDays, double dayCost, int extra){
+    public void addBooking(String type, int numDays, double dayCost, double extra){
         if (type.equalsIgnoreCase("h")){
             bookings.add(new HallBooking("HallBooking",numDays,dayCost,extra));
         }else {
@@ -34,10 +35,11 @@ public class BookingManager {
 
 
     }
-    public StringBuilder displayBooking(){// try to toString booking list and it also needs to be sorted
+    public StringBuilder displayBooking(){
+        Collections.sort(bookings);
         StringBuilder res = new StringBuilder();
-        for(int i = 0; i < bookings.size()-1 ;i++){
-            res.append(bookings.get(i).toString()).append("\n");
+        for (Booking booking : bookings) {
+            res.append(booking.toString()).append("\n");
         }
         return res;
     }

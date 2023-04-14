@@ -37,12 +37,12 @@ public class HallBooking extends Booking{
 
     @Override
     public double getCost() {
-        return super.getCost() - (rate * super.getCost());
+        return super.getCost() - ((rate/100.0) * super.getCost());
     }
 
     @Override
     public String toString() {
         return String.format("%-20s%-10s%-10s%-10s%-10s","BookingType","ID","numOfDays","singleDayCost","Booking Cost\n")+
-                "-".repeat(90)+"\n"+ String.format("%-20s"+super.toString()+"%-10.sf",super.getBookingType(),getCost());
+                "-".repeat(90)+"\n"+ String.format("%-20s"+super.toString()+"%-10.2f",super.getBookingType(),getCost());
     }
 }

@@ -1,8 +1,8 @@
 /**
  * Booking Subclass with different getCost formula.
  */
-public class PavilionBooking extends Booking {
-    private int secNum;
+public class PavilionBooking extends Booking{
+    private double secNum;
 
     /**
      * Instantiates a new Pavilion booking.
@@ -12,7 +12,7 @@ public class PavilionBooking extends Booking {
      * @param dayCost     the day cost
      * @param secNum      the sec num
      */
-    public PavilionBooking(String bookingType, int numDays, double dayCost, int secNum) {
+    public PavilionBooking(String bookingType, int numDays, double dayCost, double secNum) {
         super(bookingType, numDays, dayCost);
         this.secNum = secNum;
     }
@@ -22,7 +22,7 @@ public class PavilionBooking extends Booking {
      *
      * @return the sec num
      */
-    public int getSecNum() {
+    public double getSecNum() {
         return secNum;
     }
 
@@ -45,4 +45,5 @@ public class PavilionBooking extends Booking {
         return String.format("%-20s%-10s%-10s%-10s%-10s%-10s","BookingType","ID","numOfDays","singleDayCost","numSections","Booking Cost\n")+
                 "-".repeat(90)+"\n"+String.format("%-20s" + super.toString() + "%-10s%-10.f", super.getBookingType(), getSecNum(), getCost());
     }
+
 }

@@ -1,7 +1,7 @@
 /**
  * Saves booking data,setters,getters, calculates cost and return info in string format
  */
-public class Booking {
+public class Booking implements Comparable<Booking>{
     private String bookingType;
     private static int bookingId;
     private int numDays;
@@ -96,4 +96,17 @@ public class Booking {
     public String toString() {
         return String.format("%-10d%-10d%-10.2f", bookingId, numDays, dayCost);
     }
+
+    @Override
+    public int compareTo(Booking booking) {
+        return Double.compare(this.getCost(),booking.getCost());
+    }
+
+    /**
+     * Compare to int cost.
+     *
+     * @param booking the booking
+     * @return the int
+     */
+
 }
