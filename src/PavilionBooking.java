@@ -3,7 +3,6 @@
  */
 public class PavilionBooking extends Booking{
     private double secNum;
-    private int iD;
     /**
      * Instantiates a new Pavilion booking.
      *
@@ -15,7 +14,6 @@ public class PavilionBooking extends Booking{
     public PavilionBooking(String bookingType, int numDays, double dayCost, double secNum) {
         super(bookingType, numDays, dayCost);
         this.secNum = secNum;
-        iD = getId();
     }
 
     /**
@@ -36,14 +34,6 @@ public class PavilionBooking extends Booking{
         this.secNum = secNum;
     }
 
-    public int getiD() {
-        return iD;
-    }
-
-    public void setiD(int iD) {
-        this.iD = iD;
-    }
-
     @Override
     public double getCost() {
         return super.getCost() + (secNum * 10 * getNumDays());
@@ -52,7 +42,7 @@ public class PavilionBooking extends Booking{
     @Override
     public String toString() {
         return String.format("%-20s%-10s%-15s%-20s%-20s%-10s","BookingType","ID","numOfDays","singleDayCost","numSections","Booking Cost\n")+
-                "-".repeat(100)+"\n"+String.format("%-20s%-10d%-15d%-20.2f%-20.0f%-10.2f", getBookingType(),iD,getNumDays(),getDayCost(),getSecNum(), getCost());
+                "-".repeat(100)+"\n"+String.format("%-20s%-10d%-15d%-20.2f%-20.0f%-10.2f", getBookingType(),getiD(),getNumDays(),getDayCost(),getSecNum(), getCost());
     }
 
 }

@@ -4,6 +4,7 @@
 public class Booking implements Comparable<Booking>{
     private String bookingType;
     private static int bookingId;
+    private int iD;
     private int numDays;
     private double dayCost;
 
@@ -19,6 +20,8 @@ public class Booking implements Comparable<Booking>{
         this.numDays = numDays;
         this.dayCost = dayCost;
         bookingId++;
+        this.iD = bookingId;
+
     }
 
     /**
@@ -75,13 +78,17 @@ public class Booking implements Comparable<Booking>{
         this.dayCost = dayCost;
     }
 
-    /**
-     * Get id int.
-     *
-     * @return the int
-     */
-    public int getId() {
-        return bookingId;
+//    /**
+//     * Get id int.
+//     *
+//     * @return the int
+//     */
+//    public static int getId() {
+//        return bookingId;
+//    }
+
+    public int getiD(){
+        return iD;
     }
 
     /**

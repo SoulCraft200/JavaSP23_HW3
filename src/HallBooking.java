@@ -3,7 +3,6 @@
  */
 public class HallBooking extends Booking{
     private double rate;
-    private int iD;
 
 
     /**
@@ -17,7 +16,6 @@ public class HallBooking extends Booking{
     public HallBooking(String bookingType, int numDays, double dayCost, double rate) {
         super(bookingType, numDays, dayCost);
         this.rate = rate;
-        iD = getId();
     }
 
     /**
@@ -38,14 +36,6 @@ public class HallBooking extends Booking{
         this.rate = rate;
     }
 
-    public int getiD() {
-        return iD;
-    }
-
-    public void setiD(int iD) {
-        this.iD = iD;
-    }
-
     @Override
     public double getCost() {
         return super.getCost() - ((rate/100.0) * super.getCost());
@@ -54,6 +44,6 @@ public class HallBooking extends Booking{
     @Override
     public String toString() {
         return String.format("%-20s%-10s%-15s%-20s%-10s","BookingType","ID","numOfDays","singleDayCost","Booking Cost\n")+
-                "-".repeat(90)+"\n"+ String.format("%-20s%-10d%-15d%-20.2f%-10.2f",getBookingType(),iD,getNumDays(),getDayCost(),getCost());
+                "-".repeat(90)+"\n"+ String.format("%-20s%-10d%-15d%-20.2f%-10.2f",getBookingType(),getiD(),getNumDays(),getDayCost(),getCost());
     }
 }

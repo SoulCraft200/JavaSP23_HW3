@@ -20,11 +20,7 @@ public class BookingManager {
         boolean found = false;
         while(pos < bookings.size() && !found){
             //bookings.get(pos).getId()== Id
-            Booking temp;
-            if(bookings.get(pos).getBookingType().equals("HallBooking")){
-                temp = bookings.get(pos);
-            }
-            if(temp.getiD()== iD){
+            if(bookings.get(pos).getiD()== iD){
                 found = true;
             }else {
                 pos++;
@@ -53,7 +49,7 @@ public class BookingManager {
         boolean found = false;
         while(pos < bookings.size() && !found){
             //bookings.get(pos).getId()== Id
-            if(bookings.get(pos).getId()== iD){
+            if(bookings.get(pos).getiD()== iD){
                 found = true;
             }else {
                 pos++;
