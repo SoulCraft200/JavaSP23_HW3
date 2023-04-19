@@ -80,7 +80,7 @@ public class Booking implements Comparable<Booking>{
      *
      * @return the int
      */
-    public static int getId() {
+    public int getId() {
         return bookingId;
     }
 
@@ -94,19 +94,11 @@ public class Booking implements Comparable<Booking>{
     }
 
     public String toString() {
-        return String.format("%-10d%-10d%-10.2f", bookingId, numDays, dayCost);
+        return String.format("%-10d%-15d%-20.2f", bookingId , numDays, dayCost);
     }
 
     @Override
     public int compareTo(Booking booking) {
         return Double.compare(this.getCost(),booking.getCost());
     }
-
-    /**
-     * Compare to int cost.
-     *
-     * @param booking the booking
-     * @return the int
-     */
-
 }

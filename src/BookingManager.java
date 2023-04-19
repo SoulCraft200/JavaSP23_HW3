@@ -12,15 +12,19 @@ public class BookingManager {
         if (type.equalsIgnoreCase("h")){
             bookings.add(new HallBooking("HallBooking",numDays,dayCost,extra));
         }else {
-            bookings.add(new HallBooking("PavilionBooking",numDays,dayCost,extra));
+            bookings.add(new PavilionBooking("PavilionBooking",numDays,dayCost,extra));
         }
     }
     public String cancelBooking(int iD){
         int pos = 0;
         boolean found = false;
-        while(pos < bookings.size()-1 && !found){
+        while(pos < bookings.size() && !found){
             //bookings.get(pos).getId()== Id
-            if(Booking.getId()== iD){
+            Booking temp;
+            if(bookings.get(pos).getBookingType().equals("HallBooking")){
+                temp = bookings.get(pos);
+            }
+            if(temp.getiD()== iD){
                 found = true;
             }else {
                 pos++;
@@ -47,9 +51,9 @@ public class BookingManager {
     public String specBooking(int iD){
         int pos = 0;
         boolean found = false;
-        while(pos < bookings.size()-1 && !found){
+        while(pos < bookings.size() && !found){
             //bookings.get(pos).getId()== Id
-            if(Booking.getId()== iD){
+            if(bookings.get(pos).getId()== iD){
                 found = true;
             }else {
                 pos++;
