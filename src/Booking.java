@@ -76,14 +76,6 @@ public class Booking implements Comparable<Booking>{
         this.dayCost = dayCost;
     }
 
-//    /**
-//     * Get id int.
-//     *
-//     * @return the int
-//     */
-//    public static int getId() {
-//        return bookingId;
-//    }
 
     public int getiD(){
         return iD;

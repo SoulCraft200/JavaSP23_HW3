@@ -20,7 +20,7 @@ public class Main {
                 case "1" -> choiceOne(user, bookings);
                 case "2" -> choiceTwo(user, bookings);
                 case "3" -> choiceThree(user, bookings);
-                case "4" -> choiceFour(user, bookings);
+                case "4" -> choiceFour(bookings);
                 case "5" -> exit = true;
                 default -> System.out.println("Invalid choice....");
             }
@@ -136,7 +136,7 @@ public class Main {
         }
         System.out.println(bookings.cancelBooking(id));
     }
-    public static void choiceFour(Scanner user,BookingManager bookings){
+    public static void choiceFour(BookingManager bookings){
         System.out.println(bookings.displayBooking());
     }
 }
