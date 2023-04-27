@@ -27,26 +27,28 @@ public class Main {
                             System.out.println("Enter number of Days and  single Day Cost: ");
                             String temp = user.nextLine();
                             if(temp.matches("\\d+\\s+\\d+(\\.\\d+)?")){
-                                numDay = user.nextInt();
-                                costDay = user.nextDouble();
+                                String[] templist = temp.split(" ");
+                                numDay = Integer.parseInt(templist[0]);
+                                costDay = Double.parseDouble(templist[1]);
+
                                 r1 = true;
                             }else {
                                 System.out.println("Invalid Input");
                             }
                         }
                         boolean r2 = false;
-                        int rate;
+                        double rate;
                         while(!r2) {
                             System.out.println("Enter number of Days and  single Day Cost: ");
                             String temp = user.nextLine();
                             if(temp.matches("\\d+(\\.\\d+)?")){
-                                numDay = user.nextInt();
+                                rate = Double.parseDouble(temp);
                                 r2 = true;
                             }else {
                                 System.out.println("Invalid Input");
                             }
                         }
-                        //bookings.addBooking('h',numDay,);
+
                     }
                 }
             }

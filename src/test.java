@@ -3,18 +3,22 @@ import java.util.Scanner;
 public class test {
     public static void main(String[] args) {
         Scanner user = new Scanner(System.in);
-        boolean r2 = false;
-        double rate;
-        while(!r2) {
+        boolean r1 = false;
+        int numDay = 0 ;
+        double costDay = 0;
+        while(!r1) {
             System.out.print("Enter number of Days and  single Day Cost: ");
-            String temp = user.next();
-            if(temp.matches("\\d+(\\.\\d+)?")){
-                rate = user.nextDouble();
-                r2 = true;
+            String temp = user.nextLine();
+            if(temp.matches("\\d+\\s+\\d+(\\.\\d+)?")){
+                String[] templist = temp.split(" ");
+                numDay = Integer.parseInt(templist[0]);
+                costDay = Double.parseDouble(templist[1]);
+
+                r1 = true;
             }else {
                 System.out.println("Invalid Input");
             }
         }
-        System.out.println(rate);
+        System.out.println(numDay+"\n"+costDay);
     }
 }
