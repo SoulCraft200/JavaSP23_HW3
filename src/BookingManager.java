@@ -48,7 +48,6 @@ public class BookingManager {
         int pos = 0;
         boolean found = false;
         while(pos < bookings.size() && !found){
-            //bookings.get(pos).getId()== Id
             if(bookings.get(pos).getiD()== iD){
                 found = true;
             }else {
@@ -60,6 +59,10 @@ public class BookingManager {
         }else {
             return "Either no bookings or no such booking .................";
         }
+    }
+
+    public Booking getLast(){
+        return bookings.get(bookings.size() - 1);
     }
 
 }

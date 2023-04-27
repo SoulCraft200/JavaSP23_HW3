@@ -3,8 +3,8 @@
  */
 public class Booking implements Comparable<Booking>{
     private String bookingType;
-    private static int bookingId;
-    private int iD;
+    private static int bookingId = 0;
+    private final int iD;
     private int numDays;
     private double dayCost;
 
@@ -19,9 +19,7 @@ public class Booking implements Comparable<Booking>{
         this.bookingType = bookingType;
         this.numDays = numDays;
         this.dayCost = dayCost;
-        bookingId++;
-        this.iD = bookingId;
-
+        this.iD = ++bookingId;
     }
 
     /**
@@ -101,7 +99,7 @@ public class Booking implements Comparable<Booking>{
     }
 
     public String toString() {
-        return String.format("%-10d%-15d%-20.2f", bookingId , numDays, dayCost);
+        return String.format("%-10d%-15d%-20.2f", iD , numDays, dayCost);
     }
 
     @Override
